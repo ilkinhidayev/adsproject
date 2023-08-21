@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Billionaire</title>
+</head>
+<body>
+    <header>
+        <h1>Billionaire Orkhan Panahli and Billionaire Ilkin Hidayev</h1>
+    </header>
+    <main>
+        <div class="slideshow-container">
+            {% for ad in ads %}
+                <div class="slide fade">
+                    <img src="{{ ad.photo.url }}" alt="{{ ad.headline }}">
+                </div>
+            {% endfor %}
+        </div>        
+    </main>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
